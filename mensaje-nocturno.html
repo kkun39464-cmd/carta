@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Amiga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffe6f2 0%, #ffc2d9 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Quicksand', sans-serif;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .title {
+            color: #c2185b;
+            margin-bottom: 10px;
+            font-size: 2.8rem;
+            font-family: 'Pacifico', cursive;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #880e4f;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        
+        .message-card {
+            background: linear-gradient(to bottom, #ffffff, #fff5f7);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(194, 24, 91, 0.2);
+            margin-bottom: 40px;
+            position: relative;
+            border: 2px solid #f8bbd9;
+        }
+        
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px dashed #f48fb1;
+            border-radius: 15px;
+            pointer-events: none;
+        }
+        
+        .message-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #4a148c;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .saludo {
+            margin-bottom: 25px;
+        }
+        
+        .recipient-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            color: #c2185b;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        .message-text {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        .funny-text {
+            color: #880e4f;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .heart-text {
+            color: #c2185b;
+            font-size: 1.4rem;
+        }
+        
+        .birthday-quote {
+            font-style: italic;
+            text-align: center;
+            margin: 40px 0;
+            padding: 25px;
+            background: #fce4ec;
+            border-radius: 15px;
+            border-left: 5px solid #f06292;
+            font-size: 1.3rem;
+            color: #ad1457;
+            position: relative;
+        }
+        
+        .birthday-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: #f06292;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+        
+        .birthday-quote::after {
+            content: '"';
+            font-size: 4rem;
+            color: #f06292;
+            position: absolute;
+            bottom: -30px;
+            right: 10px;
+            opacity: 0.3;
+        }
+        
+        .birthday-icons {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 2rem;
+            color: #c2185b;
+        }
+        
+        .birthday-icons i {
+            margin: 0 15px;
+            animation: floatIcon 3s infinite ease-in-out;
+        }
+        
+        .birthday-icons i:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .birthday-icons i:nth-child(3) {
+            animation-delay: 1s;
+        }
+        
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 50px;
+            font-size: 1.4rem;
+            color: #880e4f;
+        }
+        
+        .signature-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: #c2185b;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-btn {
+            background: linear-gradient(to right, #c2185b, #ad1457);
+            color: white;
+            border: none;
+            padding: 16px 45px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(194, 24, 91, 0.4);
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(to right, #ad1457, #880e4f);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(194, 24, 91, 0.6);
+        }
+        
+        .back-btn:active {
+            transform: translateY(0);
+        }
+        
+        .back-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #e91e63, #c2185b);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-btn:hover::after {
+            opacity: 1;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #ad1457;
+            font-size: 0.9rem;
+        }
+        
+        .footer i {
+            color: #f06292;
+            margin: 0 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.3rem;
+            }
+            
+            .message-card {
+                padding: 30px;
+            }
+            
+            .recipient-name {
+                font-size: 2rem;
+            }
+            
+            .message-content {
+                font-size: 1.1rem;
+            }
+            
+            .birthday-quote {
+                font-size: 1.1rem;
+                padding: 20px;
+            }
+            
+            .back-btn {
+                padding: 14px 40px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .message-card {
+                padding: 25px;
+            }
+            
+            .recipient-name {
+                font-size: 1.8rem;
+            }
+            
+            .message-content {
+                font-size: 1rem;
+            }
+            
+            .birthday-quote {
+                font-size: 1rem;
+                padding: 15px;
+            }
+            
+            .back-btn {
+                padding: 12px 35px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">¡Feliz Cumpleaños!</h1>
+        <p class="subtitle">Un mensaje especial para la mejor amiga</p>
+        
+        <div class="message-card">
+            <div class="message-content">
+                <p class="saludo">
+                    Hola <span class="recipient-name" id="recipientName">Amix</span>,
+                </p>
+                
+                <p class="message-text">
+                    Tan solo es para decirte <span class="funny-text">feliz cumpleaños, amix</span>. Espero que cumplas muchísimos años más y que te hagas más vieja <span class="funny-text">jsjkahdkajka</span>.
+                </p>
+                
+                <p class="message-text">
+                    Pero no es todo lo que tengo que decirte en esta carta.
+                </p>
+                
+                <p class="message-text">
+                    También es para darte gracias por todo: por ser mi mejor amiga, por estar conmigo siempre y por no hacerme a un lado a pesar de cómo soy. De verdad valoro mucho eso.
+                </p>
+                
+                <div class="birthday-quote">
+                    "La amistad verdadera es ese tesoro que no se compra con dinero, sino con tiempo, risas y lealtad."
+                </div>
+                
+                <p class="message-text">
+                    Solo quiero pedirte que, si alguna vez no te gusta algo de cómo soy contigo, me lo digas y trataré de cambiarlo, porque tu amistad es muy importante para mí.
+                </p>
+                
+                <div class="birthday-icons">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-birthday-cake"></i>
+                    <i class="fas fa-gift"></i>
+                </div>
+                
+                <p class="message-text">
+                    Quiero que sepas que eres la mejor persona que he conocido en mi vida. Espero permanecer a tu lado muchos años más y que sigamos siendo mejores amigos siempre. <span class="heart-text">💖</span>
+                </p>
+                
+                <div class="signature">
+                    Con todo mi cariño,<br>
+                    <span class="signature-name">Tu mejor amigo/a</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="back-btn" id="backBtn">
+                <i class="fas fa-arrow-left"></i> Volver a la Carta
+            </button>
+        </div>
+        
+        <div class="footer">
+            <p>¡Que este cumpleaños esté lleno de alegría y risas! <i class="fas fa-heart"></i> <i class="fas fa-birthday-cake"></i> <i class="fas fa-star"></i></p>
+            <p style="margin-top: 10px;">Que todos tus deseos se hagan realidad</p>
+        </div>
+    </div>
+
+    <script>
+        // Obtener el nombre del destinatario del localStorage
+        const recipientName = localStorage.getItem('recipientName') || 'Amiga';
+        document.getElementById('recipientName').textContent = recipientName;
+        
+        // Volver a la página de la carta
+        document.getElementById('backBtn').addEventListener('click', function() {
+            document.body.style.transition = 'all 0.8s ease';
+            document.body.style.opacity = '0.8';
+            document.body.style.filter = 'blur(5px)';
+            
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 800);
+        });
+        
+        // Efecto de aparición para los párrafos
+        const messageParagraphs = document.querySelectorAll('.message-text, .saludo, .birthday-quote, .signature');
+        messageParagraphs.forEach((p, index) => {
+            p.style.opacity = '0';
+            p.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                p.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                p.style.opacity = '1';
+                p.style.transform = 'translateY(0)';
+            }, 300 + (index * 200));
+        });
+        
+        // Efecto especial para el nombre
+        const nameElement = document.getElementById('recipientName');
+        nameElement.style.opacity = '0';
+        nameElement.style.transform = 'scale(0.8)';
+        
+        setTimeout(() => {
+            nameElement.style.transition = 'opacity 1s ease, transform 1s ease';
+            nameElement.style.opacity = '1';
+            nameElement.style.transform = 'scale(1)';
+        }, 500);
+        
+        // Efecto de confeti (simulado con iconos)
+        setTimeout(() => {
+            const icons = document.querySelectorAll('.birthday-icons i');
+            icons.forEach((icon, i) => {
+                icon.style.animation = 'floatIcon 2s infinite ease-in-out';
+                icon.style.animationDelay = `${i * 0.3}s`;
+            });
+        }, 1000);
+    </script>
+</body>
+</html>
